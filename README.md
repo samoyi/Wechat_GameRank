@@ -1,6 +1,6 @@
 ﻿* 接口文档： https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842&token=&lang=zh_CN
 * gameRank文件夹和index.php(回调页面)放在同一个目录。如果需要改文件夹名字，同时需要改gameRank.js中的一处“gameRank”
-* 回调页面最好直接套用这里的index.php，否则需要做基础修改
+* 回调页面最好直接套用这里的index.php，否则需要做几处修改
 
 
 ## 使用步骤：
