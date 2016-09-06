@@ -3,20 +3,15 @@
 //sendScoreByAjax实际代码有执行时限，即超过游戏活动时间就不在提交，并且在用户提交时给出提醒。时限和提醒在函数内部具体修改
 //getRankTable要将返回的文本插入到<table>的innerHTML,这里<table>使用的id是rank_table
 
-sendScoreByAjax( nPlayScore );//发送游戏分数，参数为分数
-
-setTimeout(function()
-{
-	getRankTable();//获取排名表格。该函数应在发送函数调用之后几秒再调用，为了等待将本次成绩发送到数据库之后再读取数据库。
-}, 2000)
 
 
 
+// 游戏结束后调用sendScoreByAjax并传入分数
 
 function sendScoreByAjax( nPlayScore )
 {
 	var oDate = new Date();
-	if( Date.parse("Jun 12, 2026") > oDate.getTime() )//结束日期（当日零点）
+	if( Date.parse("10 Sep 2016 18:00:00") > oDate.getTime() )//结束日期（当日零点）
 	{
 		var xhr = new XMLHttpRequest();
 		xhr.addEventListener('readystatechange', function()
@@ -25,7 +20,7 @@ function sendScoreByAjax( nPlayScore )
 			{
 				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304)
 				{
-
+					getRankTable();//获取排名表格。
 				}
 				else
 				{
@@ -40,7 +35,7 @@ function sendScoreByAjax( nPlayScore )
 	}
 	else//如果超过了该日期
 	{
-		alert('游戏分数统计已于2016年6月12日零时结束，您的成绩不再进入排名。');
+		alert('游戏分数统计已于2016年9月10日18时结束，您的成绩不再进入排名。');
 	}
 };
 
@@ -53,7 +48,7 @@ function getRankTable( )
 		{
 			if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304)
 			{
-				document.querySelector("#rank_table").innerHTML = xhr.responseText;
+				document.querySelector("#rank_table").innerHTML = xhr.responseText; // 将表格内容放进table标签中
 			}
 			else
 			{
@@ -61,6 +56,6 @@ function getRankTable( )
 			}
 		}
 	}, false);
-	xhr.open("get", "rankTable.php", true);
+	xhr.open("get", "gameRank/rankTable.php", true);
 	xhr.send(null);
 }

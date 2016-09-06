@@ -4,18 +4,7 @@
     该页代码用于获得用户信息，以及处理当次游戏成绩的数据库提交。
     将该文件引入回调文件的上部
 */
-require_once('accountInfo.php');//引入公众号信息
-require_once('dbInfo.php');//引入数据库信息
-
-//参数设置区域----------------------------------------------------------------------------------------------------------
-
-//当前运行脚本所在服务器主机的名字。 $_SERVER['SERVER_NAME']的结果不一定准确，需要查看$_SERVER["HTTP_REFERER"]来确定
-$servername = 'www.red-space.cn';
-
-
-//参数设置结束。如非必要，不要修改下面的代码----------------------------------------------------------------------------
-
-
+require_once('initInfo.php');
 
 
 define("CODE", $_GET['code']);
@@ -24,7 +13,7 @@ if( isset($_POST["score"]) )
 {
     $sub_from = $_SERVER["HTTP_REFERER"];//链接到当前页面的前一页面的 URL 地址
     $sub_len = strlen($servername);//统计服务器的名字长度。
-    $checkfrom = substr($sub_from,7,$sub_len);//截取提交到前一页面的url，不包含http:://的部分。
+    $checkfrom = substr($sub_from,7,$sub_len);//截取提交到前一页面的url，不包含http://的部分。
     if( $checkfrom ==  $servername )//阻止跨域提交
     {
         $score = $_POST["score"];
