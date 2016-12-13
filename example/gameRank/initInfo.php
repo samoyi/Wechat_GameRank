@@ -19,8 +19,7 @@ $redirect_uri = ''; // 需要加http或者https
 
 
 // 当前运行脚本所在服务器主机的名字。
-// $_SERVER['SERVER_NAME']的结果不一定准确，需要查看$_SERVER["HTTP_REFERER"]来确定
-$servername = 'www.xxx.com'; // 不包含"http://"或"https://"
+$servername = 'www.xxx.com'; 
 
 
 //排名顺序
