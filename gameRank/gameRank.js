@@ -11,7 +11,7 @@
 function sendScoreByAjax( nPlayScore )
 {
 	var oDate = new Date();
-	if( Date.parse("10 Sep 2016 18:00:00") > oDate.getTime() )//结束日期（当日零点）
+	if( Date.parse("10 Sep 2016 18:00:00") > oDate.getTime() )//结束日期
 	{
 		var xhr = new XMLHttpRequest();
 		xhr.addEventListener('readystatechange', function()
