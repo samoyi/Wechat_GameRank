@@ -7,7 +7,7 @@
 1. 在 initInfo.php 中设定相关信息
 2. 套用这里的 index.php 作为回调页面，在其中编写当前项目代码
 3. 运行 createTable.php ，获得经过编码的授权页面地址及创建数据库表用来存储用户信息及游戏成绩
-4. 在 gameRank.js 设定发送游戏分数的事件
+4. 游戏结束后调用 gameRank.js 中的sendScoreByAjax并将游戏分数作为参数，发送到数据库
 5. 各参数根据情况可作必要修改
 
 ## 注意事项

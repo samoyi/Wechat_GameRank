@@ -1,7 +1,7 @@
 //本页包含两个函数。一个用来向数据库发送游戏分数，另一个用来从数据库请求排名前几位的信息
 //sendScoreByAjax函数中的请求地址为'index.php'，如果需要则修改
 //sendScoreByAjax实际代码有执行时限，即超过游戏活动时间就不在提交，并且在用户提交时给出提醒。时限和提醒在函数内部具体修改
-//getRankTable要将返回的文本插入到<table>的innerHTML,这里<table>使用的id是rank_table
+//getRankTable将返回的文本插入到<table>的innerHTML,这里<table>使用的id是rank_table
 
 
 
