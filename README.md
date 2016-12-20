@@ -1,6 +1,7 @@
 ﻿# 微信游戏排名
 
 ## TODO
+0. getUserInfo 函数每次都会重复调用接口获取access token
 1. 零分问题
 2. initInfo.php中填写的域名有可能和实际获取到的差个www.
 
