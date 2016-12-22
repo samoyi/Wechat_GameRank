@@ -16,7 +16,7 @@
 3. 运行 createTable.php ，获得经过编码的授权页面地址及创建数据库表用来存储用户信息及游戏成绩
 4. 游戏结束后调用 gameRank.js 中的sendScoreByAjax并将游戏分数作为参数，发送到数据库
 5. 各参数根据情况可作必要修改
-6. 确保代码放在网页授权域名之下
+6. 确保index.php放在网页授权域名（或路径）之内。如果在之外，则需要先在网页授权域名（或路径）之内获取code然后传到该index.php
 
 ## 注意事项
 * [接口文档：微信网页授权](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842&token=&lang=zh_CN)（直接点击似乎会发生错误，重进该链接即可）
