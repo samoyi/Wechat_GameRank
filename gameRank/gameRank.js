@@ -36,6 +36,7 @@ function sendScoreByAjax( nPlayScore )
 	else//如果超过了该日期
 	{
 		alert('游戏分数统计已于2016年9月10日18时结束，您的成绩不再进入排名。');
+		getRankTable();
 	}
 };
 
