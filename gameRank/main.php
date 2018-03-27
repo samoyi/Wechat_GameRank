@@ -41,7 +41,7 @@ if( isset($_POST["score"]) )
                     {
                         $isRewrite = !$desc;
                     }
-                    if( !$row['score'])//原来没有记录则写入
+                    if( !$row['score'] && $row['score']!=0)//原来没有记录则写入
                     {
                         $query1 = "INSERT INTO " . TABLE_NAME . " (openid, score, nickname, headimgurl) VALUES ('$openid', '$score', '$nickname', '$headimgurl');";
                        @mysqli_query( $dbr, $query1);
@@ -77,4 +77,3 @@ function httpGet($url)//发送GET请求
 }
 
 ?>
-   

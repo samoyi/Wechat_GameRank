@@ -2,15 +2,12 @@
 
 
 <?php
-//ajax请求该文件，会返回用于排名的table的innerHTML。即只需要在HTML中写好<table>标签，然后将xhr.responseText插入该标签内。
+//ajax请求该文件，会返回用于排名的table的innerHTML。即只需要在HTML中写好<table>标签，
+// 然后将xhr.responseText插入该标签内。
 //默认是三列十条数据，另还有最开始一行的列名。三列分别为名词、成绩和用户。默认用户列包含头像和昵称。
 
 
 require_once('initInfo.php');
-
-
-
-
 
 if( $dbr = @mysqli_connect(DB_ADDRESS, DB_USER, DB_PASSWORD, DB_NAME))
 {
